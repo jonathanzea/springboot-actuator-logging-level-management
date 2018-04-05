@@ -1,19 +1,17 @@
 # Actuator Management Endpoints - Spring Boot (1.5.10)
-This project exposes an endpoint that in its controller have diferents loggers at diferents levels so you can test the actuator managament loggers endpoints to see how it works
+   This project exposes an endpoint that in its controller has some loggers in different logging levels diferents loggers so you can test the actuator managament loggers endpoints to see how does it works.
 
-## Management Endpoints
+   In spring boot, from version 1.5.x, the ACTUATOR DEPENDENCY includes some other management Endpoints
+a part from the normal spring boot ones like /health or /metrics
 
-You'll also find a configuration in ```src/main/resources``` to easily enter those endpoints
+You'll also find a particular configuration in ```src/main/resources``` to easily access to those endpoint without needing to configure the http security for this management (internal) services.
 
 ## How to run (IntelliJ)?
 
 Create a new running configuration (Application type) and just add the main class `Application.java` and run it!
 
 ## How does it work?
- In spring boot, from version 1.5.x, the ACTUATOR DEPENDENCY includes some other management Endpoints
-a part from the normal spring boot ones like /health and /metrics
-
-### Adding the propper dependencies
+   Adding the propper dependencies
 ```
  <parent>
         <groupId>org.springframework.boot</groupId>
@@ -41,12 +39,16 @@ a part from the normal spring boot ones like /health and /metrics
         </dependency>
     </dependencies>
 ```
-Note that I have a parent that gives me the parent version for every dependency
+Note that I have a parent **with a version specifiedd** that gives me the version for every son dependency
+
 The ...starter-actuator it activates this new Endpoints
 
-- Your application, in src/resources, must have an application.properties, and
-this should be its content
 
+## Personalizing the management endpoints
+   The application.properties in this project is very simple as you can see, but you also can add more configurations in order to limit the exposing of all the management-internal services you have.
+
+This is an example for a configuration that only expose the HEALTH (Spring boot) and the LOGGERS (Actuator) endpoints.
+```
         management.endpoints.web.expose=health
         management.endpoint.health.show-details=never
         management.security.enabled=false
@@ -63,13 +65,10 @@ this should be its content
         endpoints.loggers.enabled=true
         endpoints.loggers.id=loggers
         management.endpoint.loggers.enabled=true
+```
 
-As you can see theres a custimized configuration for the MANAGEMENT ENDPOINTS 
-With this configuration, you can LIMIT the management endpoints to expose
-just HEALTH AND LOGGER endpoints. But if u comment from line 44 to 55
-you'll see the complete list of MANAGEMENT ENDPOINTS
-
-- Finally with your normal (Basic Spring Boot web) application, you would be able
+###How to access thoes endpoints?
+- Finally with your normal (Basic Spring Boot web) application running, you would be able
 to access these endpoints;
 
 Check the current log levels
