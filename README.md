@@ -54,13 +54,17 @@ This is an example for a configuration that only expose the HEALTH (Spring boot)
         management.security.enabled=false
         management.metrics.web.server.auto-time-requests=true
         management.health.defaults.enabled=false
+        
         #Disable all internal default endpoints
         endpoints.enabled=false
+        
         #Enable Health endpoints
         endpoints.health.enabled=true
+        
         #Enable Prometeus Endpoints
         endpoints.prometheus.enabled=true
         endpoints.prometheus.id=metrics
+        
         #Enable  Actuator Loggers Endpoints
         endpoints.loggers.enabled=true
         endpoints.loggers.id=loggers
