@@ -10,7 +10,7 @@ You'll also find a particular configuration in ```src/main/resources``` to easil
 
 Create a new running configuration (Application type) and just add the main class `Application.java` and run it!
 
-## How does it work?
+### How does it work?
    Adding the propper dependencies
 ```
  <parent>
@@ -44,7 +44,7 @@ Note that I have a parent **with a version specifiedd** that gives me the versio
 The ...starter-actuator it activates this new Endpoints
 
 
-## Personalizing the management endpoints
+### Customizing your own management endpoints exposing
    The application.properties in this project is very simple as you can see, but you also can add more configurations in order to limit the exposing of all the management-internal services you have.
 
 This is an example for a configuration that only expose the HEALTH (Spring boot) and the LOGGERS (Actuator) endpoints.
@@ -67,17 +67,17 @@ This is an example for a configuration that only expose the HEALTH (Spring boot)
         management.endpoint.loggers.enabled=true
 ```
 
-###How to access thoes endpoints?
+### How to access the endpoints?
 - Finally with your normal (Basic Spring Boot web) application running, you would be able
 to access these endpoints;
 
 Check the current log levels
-    GET
-    http://localhost:8080/loggers
+    `GET`
+    http://localhost:8080/loggers
 
 Change the log levels
-    POST
-    http://localhost:8080/loggers{package name}
+    `POST`
+    http://localhost:8080/loggers{package name}
     {"configuredLevel": "TRACE"}
 
 
