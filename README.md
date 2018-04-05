@@ -72,15 +72,17 @@ This is an example for a configuration that only expose the HEALTH (Spring boot)
 to access these endpoints;
 
 **Check the current log levels**
+
     `GET`
     
     ```http://localhost:8080/loggers```
 
 **Change the log levels**
+
     `POST`
     
-    ```http://localhost:8080/loggers/{package name}
-    
+    ```http://localhost:8080/loggers/{package name}```
+    
     {"configuredLevel": "TRACE"}
 
 
