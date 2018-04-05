@@ -71,12 +71,12 @@ This is an example for a configuration that only expose the HEALTH (Spring boot)
 - Finally with your normal (Basic Spring Boot web) application running, you would be able
 to access these endpoints;
 
-Check the current log levels
+**Check the current log levels**
     `GET`
     
     http://localhost:8080/loggers
 
-Change the log levels
+**Change the log levels**
     `POST`
     
     http://localhost:8080/loggers{package name}
@@ -84,11 +84,11 @@ Change the log levels
     {"configuredLevel": "TRACE"}
 
 
-Further information
+### Further information
 *How to enable Spring Boot 1.5.x new Management Actuator Loggers endpoint?*
-`http://blog.codeleak.pl/2017/03/spring-boot-configure-log-level-in.html`
+http://blog.codeleak.pl/2017/03/spring-boot-configure-log-level-in.html
 
 
 
-MANUAL CUSTOMIZE LOG LEVEL
+### What if want to configure it mannually (without spring boot management endpoints?MANUAL CUSTOMIZE LOG LEVEL
 https://rogerwelin.github.io/java/springboot/logback/2017/03/11/change-loglevel-at-runtime-springboot.html
