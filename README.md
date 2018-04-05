@@ -79,7 +79,7 @@ to access these endpoints;
 **Change the log levels**
     `POST`
     
-    http://localhost:8080/loggers{package name}
+    http://localhost:8080/loggers/{package name}
     
     {"configuredLevel": "TRACE"}
 
