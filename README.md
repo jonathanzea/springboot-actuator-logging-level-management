@@ -82,6 +82,7 @@ Method: `GET`
 Method: `POST`
     
     ```http://localhost:8080/loggers/{package name}```
+    
     
 Body: `{"configuredLevel": "TRACE"}`
 
