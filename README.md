@@ -68,20 +68,20 @@ This is an example for a configuration that only expose the HEALTH (Spring boot)
 ```
 
 ## How to access the endpoints?
-- Finally with your normal (Basic Spring Boot web) application running, you would be able
+Finally with your normal (Basic Spring Boot web) application running, you would be able
 to access these endpoints;
 
 **Check the current log levels**
 
 Method: `GET`
     
-    ```http://localhost:8080/loggers```
+```http://localhost:8080/loggers```
 
 **Change the log levels**
 
 Method: `POST`
     
-    ```http://localhost:8080/loggers/{package name}```
+```http://localhost:8080/loggers/{package name}```
     
     
 Body: `{"configuredLevel": "TRACE"}`
