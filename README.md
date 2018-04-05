@@ -73,17 +73,17 @@ to access these endpoints;
 
 **Check the current log levels**
 
-    `GET`
+Method: `GET`
     
     ```http://localhost:8080/loggers```
 
 **Change the log levels**
 
-    `POST`
+Method: `POST`
     
     ```http://localhost:8080/loggers/{package name}```
     
-    {"configuredLevel": "TRACE"}
+Body: `{"configuredLevel": "TRACE"}`
 
 
 ## Further information
